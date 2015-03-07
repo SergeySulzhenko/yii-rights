@@ -126,7 +126,7 @@ class RightsModule extends CWebModule
 					'superuserName'=>$this->superuserName,
 					'authenticatedName'=>$this->authenticatedName,
 					'guestName'=>Yii::app()->user->guestName,
-					'defaultRoles'=>Yii::app()->authManager->defaultRoles,
+					'defaultRoles'=>Yii::app()->getComponent('RAuthManager')->defaultRoles,
 				),
 			));
 

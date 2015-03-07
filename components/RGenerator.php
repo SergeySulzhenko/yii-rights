@@ -23,7 +23,7 @@ class RGenerator extends CApplicationComponent
 	{
 		parent::init();
 
-		$this->_authManager = Yii::app()->getAuthManager();
+		$this->_authManager = Yii::app()->getComponent('RAuthManager');
 		$this->db = $this->_authManager->db;
 	}
 

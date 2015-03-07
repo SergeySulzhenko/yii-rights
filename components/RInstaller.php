@@ -52,7 +52,7 @@ class RInstaller extends CApplicationComponent
 
 		// Make sure the application is configured
 		// to use a valid authorization manager.
-		$authManager = Yii::app()->getAuthManager();
+		$authManager = Yii::app()->getComponent('RAuthManager');
 		if( ($authManager instanceof RDbAuthManager)===false )
 			throw new CException(Rights::t('install', 'Application authorization manager must extend the RDbAuthManager class.'));
 
