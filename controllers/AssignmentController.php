@@ -6,7 +6,7 @@
 * @copyright Copyright &copy; 2010 Christoffer Niska
 * @since 0.9.1
 */
-class AssignmentController extends RController
+class AssignmentController extends Controller
 {
 	/**
 	* @property RAuthorizer
@@ -24,36 +24,6 @@ class AssignmentController extends RController
 
 		// Register the scripts
 		$this->module->registerScripts();
-	}
-
-	/**
-	* @return array action filters
-	*/
-	public function filters()
-	{
-		return array('accessControl');
-	}
-
-	/**
-	* Specifies the access control rules.
-	* This method is used by the 'accessControl' filter.
-	* @return array access control rules
-	*/
-	public function accessRules()
-	{
-		return array(
-			array('allow', // Allow superusers to access Rights
-				'actions'=>array(
-					'view',
-					'user',
-					'revoke',
-				),
-				'users'=>$this->_authorizer->getSuperusers(),
-			),
-			array('deny', // Deny all users
-				'users'=>array('*'),
-			),
-		);
 	}
 
 	/**

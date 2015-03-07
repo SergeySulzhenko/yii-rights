@@ -6,7 +6,7 @@
 * @copyright Copyright &copy; 2010 Christoffer Niska
 * @since 0.9.8
 */
-class InstallController extends RController
+class InstallController extends Controller
 {
 	/**
 	* @property RAuthorizer
@@ -32,38 +32,6 @@ class InstallController extends RController
 
 		// Register the scripts.
 		$this->module->registerScripts();
-	}
-
-	/**
-	* @return array action filters
-	*/
-	public function filters()
-	{
-		// Use access control when installed.
-		return $this->_installer->installed===true ? array('accessControl') : array();
-	}
-
-	/**
-	* Specifies the access control rules.
-	* This method is used by the 'accessControl' filter.
-	* @return array access control rules
-	*/
-	public function accessRules()
-	{
-		return array(
-			array('allow', // Allow superusers to access Rights
-				'actions'=>array(
-					'confirm',
-					'run',
-                    'error',
-					'ready',
-				),
-				'users'=>$this->_authorizer->getSuperusers(),
-			),
-			array('deny', // Deny all users
-				'users'=>array('*'),
-			),
-		);
 	}
 
 	/**

@@ -6,7 +6,7 @@
 * @copyright Copyright &copy; 2010 Christoffer Niska
 * @since 0.5
 */
-class AuthItemController extends RController
+class AuthItemController extends Controller
 {
 	/**
 	* @property RAuthorizer
@@ -28,47 +28,6 @@ class AuthItemController extends RController
 
 		// Register the scripts
 		$this->module->registerScripts();
-	}
-
-	/**
-	* @return array action filters
-	*/
-	public function filters()
-	{
-		return array(
-			'accessControl'
-		);
-	}
-
-	/**
-	 * Specifies the access control rules.
-	 * This method is used by the 'accessControl' filter.
-	 * @return array access control rules
-	 */
-	public function accessRules()
-	{
-		return array(
-			array('allow', // Allow superusers to access Rights
-				'actions'=>array(
-					'permissions',
-					'operations',
-					'tasks',
-					'roles',
-					'generate',
-					'create',
-					'update',
-					'delete',
-					'removeChild',
-					'assign',
-					'revoke',
-					'sortable',
-				),
-				'users'=>$this->_authorizer->getSuperusers(),
-			),
-			array('deny', // Deny all users
-				'users'=>array('*'),
-			),
-		);
 	}
 
 	/**
