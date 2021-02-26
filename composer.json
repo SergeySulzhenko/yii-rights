@@ -1,0 +1,19 @@
+{
+  "name": "crisu83/yii-rights",
+  "description": "Yii-rights is a module for the Yii PHP framework that provides a web user interface for Yii's built-in authorization manager",
+  "type": "library",
+  "license": "BSD-3-Clause",
+  "keywords": ["yii", "auth"],
+  "homepage": "https://github.com/crisu83/yii-rights",
+  "authors": [
+    {
+      "name": "Christoffer Niska"
+    }
+  ],
+  "require": {
+    "php":">=5.4.0"
+  },
+  "require-dev": {
+  },
+  "minimum-stability": "dev"
+}
